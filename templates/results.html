@@ -1,0 +1,44 @@
+<!-- templates/results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Resume Screening Results</h1>
+  <a href="/">← Go Back</a>
+  <div>
+
+    {% for res in results %}
+    
+    <h2>{{ res.filename }}</h2>
+    <p><strong>Match Score:</strong> {{ res.analysis.match_score }}</p>
+  
+    <h3>Matching Skills</h3>
+    <ul>
+      {% for skill in res.analysis.matching_skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  
+    <h3>Missing Skills</h3>
+    <ul>
+      {% for skill in res.analysis.missing_skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  
+    <h3>Suggested Resources</h3>
+    <ul>
+      {% for resource in res.analysis.resources %}
+        <li>{{ resource }}</li>
+      {% endfor %}
+    </ul>
+  
+    <p><strong>Feedback:</strong> {{ res.analysis.feedback }}</p>
+    <hr>
+  {% endfor %}
+  </div>
+</body>
+</html>
