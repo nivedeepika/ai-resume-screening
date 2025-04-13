@@ -21,7 +21,7 @@ An intelligent resume screening tool that uses Google's **Gemini Pro API** to an
 - PDF parsing
 
 ## 📸 Screenshots
-[Add some UI screenshots here]
+coming soon
 
 ## 💡 Future Scope
 - Add multiple resume uploads
